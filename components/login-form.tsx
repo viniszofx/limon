@@ -10,7 +10,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-import { login, signup } from "@/app/login/_actions";
+import { login, signup } from "@/app/(auth)/login/_actions";
+import Link from "next/link";
 
 export function LoginForm({
   className,
@@ -61,13 +62,9 @@ export function LoginForm({
             </div>
             <div className="mt-4 text-center text-sm">
               Don&apos;t have an account?{" "}
-              <Button
-                variant="link"
-                formAction={signup}
-                className="cursor-pointer text-sm underline-offset-4 hover:underline"
-              >
+              <Link href={"/signup"} className="cursor-pointer text-blue-500">
                 Sign Up
-              </Button>
+              </Link>
             </div>
           </form>
         </CardContent>
